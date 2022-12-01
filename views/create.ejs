@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<% elements.forEach( element => { %>
+    <form method="POST" action="/inventory/actualizar/<%= element._id %>">
+    Name: <input type="text" name="item" value="<%= element.item %>"></input>
+    Qty:  <input type="text" name="qty" value="<%= element.qty %>"></input>
+    Size: <input type="text" name="size" value="<%= JSON.stringify(element.size) %>"></input>
+    Status: <input type="text" name="status" value="<%= element.status %>"></input>
+
+    <input type="submit" value="Edit"></input>
+    </form>
+    <% }) %>
+</body>
+</html>
